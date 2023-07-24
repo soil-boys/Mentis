@@ -7,7 +7,7 @@ import AIResponseCard from "../cards/AI response/AIResponseCard"
 import useResponse from "../../../hook/useResponse"
 import { SIZES, COLORS } from "../../../constants"
 
-function Response({ prompts }) {
+function Response() {
 
     // const promptsArr = prompts ? [...prompts] : []
     // const lastIndex = (!promptsArr || !prompts?.length) ? null : promptsArr.length

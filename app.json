@@ -5,6 +5,9 @@
       "bundler": "metro"
     },
     "name": "Mentis",
-    "slug": "Mentis"
+    "slug": "Mentis",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

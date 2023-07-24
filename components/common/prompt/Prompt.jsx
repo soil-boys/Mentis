@@ -5,7 +5,7 @@ import { icons } from "../../../constants"
 import styles from "./prompt.style"
 
 
-function Prompt({ prompts, setPrompts, setTakePicture }) {
+function Prompt() {
 
     const [prompt, setPrompt] = useState('')
 

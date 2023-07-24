@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { View, Text } from 'react-native'
 import { useRouter } from 'expo-router'
 
+import Scale from '../../common/scale/Scale'
+
 import styles from './welcome.style'
-import Prompt from '../../common/prompt/Prompt'
-import Response from '../../common/response/Response'
 // import { COLORS, icons, SIZES } from '../../../constants'
 
-const Welcome = ({ permission, turnedOn }) => {
+const Welcome = () => {
   const router = useRouter()
 
   const user = 'Risu'
@@ -16,19 +16,10 @@ const Welcome = ({ permission, turnedOn }) => {
     <View style={{ flex: 1 }}>
       <View style={styles.container}>
         <Text style={styles.userName}>Hello {user}</Text>
-        <Text style={styles.welcomeMessage}>Anything you want to talk about?</Text>
+        <Text style={styles.welcomeMessage}>How is your mood today?</Text>
       </View>
 
-{/* 
-      <Response
-        prompts={prompts}
-      />
-
-      <Prompt
-        prompts={prompts}
-        setPrompts={setPrompts}
-        setTakePicture={setTakePicture}
-      /> */}
+      <Scale />
 
     </View>
   )
