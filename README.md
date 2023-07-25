@@ -13,6 +13,7 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 - [X] Add Welcome component
 - [X] Add Mood Scale
 - [X] Add Mood Overview
+- [] Set different responses for 'Sad' and 'Bad'
 - [] Add Minimal Navbar
 
     ( (X) = Done, (O) = In progress, (-) = Halted )
