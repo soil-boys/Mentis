@@ -1,4 +1,4 @@
-const getGreet = (hour) => {
+const getGreeting = (hour) => {
     let greet
     if (hour >= 3 && hour < 12) greet = 'morning'
     else if (hour >= 12 && hour < 15) greet = 'afternoon'
@@ -9,4 +9,4 @@ const getGreet = (hour) => {
     return greet
 }
 
-export default getGreet
+export default getGreeting

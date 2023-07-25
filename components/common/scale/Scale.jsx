@@ -1,9 +1,9 @@
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, Pressable, Image } from 'react-native'
 import Slider from '@react-native-community/slider'
 import { LinearGradient } from 'expo-linear-gradient'
 
 import styles from './scale.style'
-import { COLORS, SIZES, images } from '../../../constants'
+import { COLORS, SIZES, icons, images } from '../../../constants'
 import { useState } from 'react'
 
 function Scale() {
@@ -22,7 +22,7 @@ function Scale() {
                     end={{ x: 1, y: 1 }}
                 >
                     <Slider
-                        style={{ width: '109%' }}
+                        style={{ width: '110%' }}
                         minimumValue={1}
                         maximumValue={5}
                         step={0}
@@ -40,18 +40,30 @@ function Scale() {
                     {[1,2,3,4,5].map(number => ( <Text key={number} style={styles.numberLineText} >{number}</Text> ))}
                 </View>
 
+                {!submitted ? (
                 <Pressable
-                    style={styles.scaleBtn(submitted)}
+                    style={styles.scaleBtn}
                     android_ripple={{ color: COLORS.white, radius: 5 }}
-                    disabled={submitted}
                     onPress={() => {
                         setSubmitted(true)
                         setDegree(Math.round(value))
-                        console.log(degree)
                     }}
                 >
-                    <Text style={styles.scaleBtnText(submitted)}>{submitted ? 'Submitted' : 'Submit'}</Text>
+                    <Text style={styles.scaleBtnText}>{submitted ? 'Submitted' : 'Submit'}</Text>
                 </Pressable>
+                ) : (
+                    <Pressable
+                    style={styles.editBtn}
+                    android_ripple={{ color: COLORS.white, radius: 5 }}
+                    onPress={() => setSubmitted(false)}
+                >
+                    <Image
+                        style={styles.editBtnImage}
+                        source={icons.edit}
+                        resizeMode='contain'
+                    />
+                </Pressable>
+                )}
             </View>
         </View>
     )
