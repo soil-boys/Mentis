@@ -4,19 +4,38 @@ import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
     container: {
-        width: "100%",
+        width: '90%',
+        marginTop: SIZES.xLarge,
+        alignItems: 'flex-end',
+        alignSelf: 'flex-end',
     },
-    userName: {
+    text1: {
+        fontFamily: FONT.bold,
+        fontSize: SIZES.xLarge,
+        color: COLORS.primary,
+        marginBottom: SIZES.small
+    },
+    text2: {
         fontFamily: FONT.regular,
         fontSize: SIZES.large,
         color: COLORS.secondary,
     },
-    welcomeMessage: {
+    boxContainer: (flipped = false) => ({
+        backgroundColor: COLORS.quaternary,
+        borderRadius: SIZES.small * 0.8,
+        padding: SIZES.small,
+        marginBottom: SIZES.medium,
+        justifyContent: 'flex-end',
+        alignItems: flipped ? 'flex-start' : 'flex-end',
+        alignSelf: flipped ? 'flex-start' : 'flex-end',
+    }),
+    boxText: (flipped = false) => ({
         fontFamily: FONT.bold,
-        fontSize: SIZES.xLarge,
+        fontSize: SIZES.xLarge * 1.6,
         color: COLORS.primary,
-        marginTop: 2,
-    },
+        textTransform: flipped ? 'lowercase' : 'capitalize',
+        paddingRight: SIZES.medium
+    })
 })
 
 export default styles

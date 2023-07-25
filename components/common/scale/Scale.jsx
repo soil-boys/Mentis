@@ -5,7 +5,6 @@ import { LinearGradient } from 'expo-linear-gradient'
 import styles from './scale.style'
 import { COLORS, SIZES, images } from '../../../constants'
 import { useState } from 'react'
-import { color } from 'react-native-reanimated'
 
 function Scale() {
 
