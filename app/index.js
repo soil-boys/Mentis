@@ -3,7 +3,7 @@ import { View, ScrollView, SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
 
 import { COLORS, icons, SIZES } from "../constants";
-import { ScreenHeaderBtn, Welcome } from "../components";
+import { Welcome, Overview } from "../components";
 
 console.reportErrorsAsExceptions = false;
 
@@ -23,6 +23,8 @@ function Home() {
             <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
                 <View style={{ flex: 1, padding: SIZES.medium }}>
                     <Welcome />
+
+                    <Overview />
                 </View>
             </ScrollView>
 

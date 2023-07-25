@@ -34,8 +34,15 @@ const styles = StyleSheet.create({
         fontSize: SIZES.xLarge * 1.6,
         color: COLORS.primary,
         textTransform: flipped ? 'lowercase' : 'capitalize',
-        paddingRight: SIZES.medium
-    })
+        paddingRight: flipped ? 0 : SIZES.xSmall / 2,
+        paddingLeft: flipped ? SIZES.xSmall / 2 : 0,
+    }),
+    emoText: {
+        marginTop: SIZES.xSmall * -.3,
+        fontFamily: FONT.regular,
+        fontSize: SIZES.medium,
+        color: COLORS.gray
+    }
 })
 
 export default styles

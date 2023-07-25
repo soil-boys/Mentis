@@ -3,7 +3,6 @@ import { View, Text } from 'react-native'
 import { useRouter } from 'expo-router'
 
 import Scale from '../../common/scale/Scale'
-import OverallMood from '../../common/overall mood/OverallMood'
 
 import styles from './welcome.style'
 // import { COLORS, icons, SIZES } from '../../../constants'
@@ -21,8 +20,6 @@ function Welcome() {
       </View>
 
       <Scale />
-
-      <OverallMood />
 
     </View>
   )

@@ -2,6 +2,7 @@ import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
 
 // home screen
 import Welcome from "./home/welcome/Welcome";
+import Overview from "./home/overview/Overview";
 
 // common
 // import AIResponseCard from "./common/cards/AI response/AIResponseCard";
@@ -10,6 +11,7 @@ import Welcome from "./home/welcome/Welcome";
 export {
   ScreenHeaderBtn,
   Welcome,
+  Overview
   // AIResponseCard,
   // UserResponseCard
 };

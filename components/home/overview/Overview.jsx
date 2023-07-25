@@ -2,14 +2,14 @@ import React from 'react'
 import { View, Text, Pressable } from 'react-native'
 import { useRouter } from 'expo-router'
 
-import styles from './overallmood.style'
-import { COLORS, SIZES } from '../../../constants'
+import styles from './overview.style'
+import { COLORS } from '../../../constants'
 
-function OverallMood() {
+function Overview() {
     const router = useRouter()
 
-    const mood = 'okay'
-    const fluctuation = 3
+    const mood = 'bad'
+    const fluctuation = 15
 
     return (
         <View style={{ flex: 1 }}>
@@ -18,6 +18,7 @@ function OverallMood() {
             <Pressable style={styles.boxContainer()} android_ripple={{ color: COLORS.secondary, radius: 1 }}>
                 <Text style={styles.text2}>Your overall mood was</Text>
                 <Text style={styles.boxText()}>{mood}</Text>
+                {(mood === 'sad' || mood === 'bad') ? (<Text style={styles.emoText}>Hope you're alright...</Text>) : null }
             </Pressable>
             <Pressable style={styles.boxContainer(true)} android_ripple={{ color: COLORS.secondary, radius: 1 }}>
                 <Text style={styles.text2}>It fluctuated</Text>
@@ -29,4 +30,4 @@ function OverallMood() {
     )
 }
 
-export default OverallMood
+export default Overview
