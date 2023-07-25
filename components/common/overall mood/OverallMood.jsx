@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { View, Text } from 'react-native'
 import { useRouter } from 'expo-router'
 
-import Scale from '../../common/scale/Scale'
+import styles from './overallmood.style'
 
-import styles from './welcome.style'
-// import { COLORS, icons, SIZES } from '../../../constants'
-
-function Welcome() {
+function OverallMood() {
   const router = useRouter()
 
   const user = 'Risu'
@@ -25,4 +22,4 @@ function Welcome() {
   )
 }
 
-export default Welcome
+export default OverallMood

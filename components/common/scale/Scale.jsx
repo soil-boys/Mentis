@@ -1,13 +1,18 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 import Slider from '@react-native-community/slider'
 import { LinearGradient } from 'expo-linear-gradient'
 
 import styles from './scale.style'
-import { COLORS, images } from '../../../constants'
+import { COLORS, SIZES, images } from '../../../constants'
+import { useState } from 'react'
+import { color } from 'react-native-reanimated'
 
 function Scale() {
 
-
+    const [value, setValue] = useState(3)
+    const [degree, setDegree] = useState(Math.round(value))
+    const [submitted, setSubmitted] = useState(false)
+    
     return (
         <View style={styles.container}>
             <View style={styles.scaleContainer}>
@@ -18,22 +23,36 @@ function Scale() {
                     end={{ x: 1, y: 1 }}
                 >
                     <Slider
-                        style={{ flex: 1, transform: [{ scale: 1.1 }] }}
+                        style={{ width: '109%' }}
                         minimumValue={1}
                         maximumValue={5}
-                        step={1}
+                        step={0}
+                        value={value}
+                        onSlidingComplete={(val) => {
+                            setValue(val)
+                        }}
                         minimumTrackTintColor='transparent'
                         maximumTrackTintColor='transparent'
                         thumbImage={images.thumb}
+                        disabled={submitted}
                     />
                 </LinearGradient>
                 <View style={styles.numberLine}>
                     {[1,2,3,4,5].map(number => ( <Text key={number} style={styles.numberLineText} >{number}</Text> ))}
                 </View>
 
-                <TouchableOpacity style={styles.scaleBtn} onPress={() => {}}>
-                    <Text style={styles.scaleBtnText}>Submit</Text>
-                </TouchableOpacity>
+                <Pressable
+                    style={styles.scaleBtn(submitted)}
+                    android_ripple={{ color: COLORS.white, radius: 5 }}
+                    disabled={submitted}
+                    onPress={() => {
+                        setSubmitted(true)
+                        setDegree(Math.round(value))
+                        console.log(degree)
+                    }}
+                >
+                    <Text style={styles.scaleBtnText(submitted)}>{submitted ? 'Submitted' : 'Submit'}</Text>
+                </Pressable>
             </View>
         </View>
     )

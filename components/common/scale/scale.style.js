@@ -13,8 +13,14 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.quaternary,
         borderRadius: SIZES.small * 0.8,
         padding: SIZES.medium,
+        justifyContent: "center",
     },
     scale: {
+        marginTop: SIZES.xSmall * .4,
+        width: '100%',
+        justifyContent: "center",
+        alignItems: 'center',
+        alignSelf: 'center',
         height: 8,
         borderRadius: SIZES.small,
     },
@@ -22,24 +28,25 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: SIZES.xSmall * .8,
+        marginTop: SIZES.xSmall * .95,
     },
     numberLineText: {
         color: COLORS.gray,
         fontFamily: FONT.bold,
     },
-    scaleBtn: {
+    scaleBtn: (submitted = false) => ({
         alignSelf: 'flex-end',
         borderRadius: SIZES.small * 0.8,
-        padding: SIZES.xSmall * 0.8,
-        backgroundColor: COLORS.tertiary,
-        marginTop: SIZES.large
-    },
-    scaleBtnText: {
+        padding: SIZES.xSmall * 0.85,
+        backgroundColor: submitted ? COLORS.primary : COLORS.tertiary,
+        marginTop: SIZES.large,
+        overflow: 'hidden'
+    }),
+    scaleBtnText: (submitted = false) => ({
         fontFamily: FONT.medium,
         fontSize: SIZES.large * 1.02,
-        color: COLORS.lightWhite
-    }
+        color: submitted ? COLORS.quaternary : COLORS.lightWhite
+    })
 })
 
 export default styles
