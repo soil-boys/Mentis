@@ -1,14 +1,18 @@
-# Expo Router Example
+# Mentis
 
 Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
 
-## 🚀 How to use
+### 🚀 Goals
 
-```sh
-npx create-expo-app -e with-router
-```
+- [O] UI/UX
+- [] AI Implementation to predict mood analytics based on statistical data
 
-## 📝 Notes
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+## 📝 To Do
+
+- [X] Add Welcome component
+- [X] Add Mood Scale
+- [X] Add Mood Overview
+- [] Add Minimal Navbar
+
+    ( (X) = Done, (O) = In progress, (-) = Halted )
