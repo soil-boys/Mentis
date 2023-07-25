@@ -15,17 +15,18 @@ const styles = StyleSheet.create({
         padding: SIZES.medium,
     },
     scale: {
-        height: 6,
+        height: 8,
         borderRadius: SIZES.small,
     },
     numberLine: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: SIZES.xSmall / 2
+        marginTop: SIZES.xSmall * .8,
     },
     numberLineText: {
-        color: COLORS.gray
+        color: COLORS.gray,
+        fontFamily: FONT.bold,
     },
     scaleBtn: {
         alignSelf: 'flex-end',

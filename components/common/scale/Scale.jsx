@@ -3,9 +3,10 @@ import Slider from '@react-native-community/slider'
 import { LinearGradient } from 'expo-linear-gradient'
 
 import styles from './scale.style'
-import { COLORS } from '../../../constants'
+import { COLORS, images } from '../../../constants'
 
 function Scale() {
+
 
     return (
         <View style={styles.container}>
@@ -23,7 +24,7 @@ function Scale() {
                         step={1}
                         minimumTrackTintColor='transparent'
                         maximumTrackTintColor='transparent'
-                        thumbTintColor={COLORS.primary}
+                        thumbImage={images.thumb}
                     />
                 </LinearGradient>
                 <View style={styles.numberLine}>
