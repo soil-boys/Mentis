@@ -12,7 +12,7 @@ function Overview() {
     return (
         <View style={{ flex: 1 }}>
         <View style={styles.container}>
-            <Text style={styles.text1}>Over the past month</Text>
+            <Text style={styles.text1}>Over the past week</Text>
             <Pressable style={styles.boxContainer()} android_ripple={{ color: COLORS.secondary, radius: .1 }}>
                 <Text style={styles.text2}>Your overall mood was</Text>
                 <Text style={styles.boxText()}>{mood}</Text>

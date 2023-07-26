@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { View, ScrollView, SafeAreaView } from "react-native";
 import { useRouter } from "expo-router";
 
-import { Welcome, Overview } from "../../components";
+import { Welcome, Overview, Scale } from "../../components";
 
 import { COLORS, FONT, icons, SIZES } from "../../constants";
 import getGreeting from '../../utils/getGreeting'
-import moment from "moment/moment";
+import moment from "moment";
 
 function Home() {
 
@@ -22,6 +22,7 @@ function Home() {
             <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false} overScrollMode="never">
                 <View style={{ flex: 1, padding: SIZES.medium }}>
                     <Welcome time={greeting} />
+                    <Scale />
                     <Overview />
                 </View>
             </ScrollView>

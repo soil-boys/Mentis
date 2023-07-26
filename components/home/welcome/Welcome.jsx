@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { View, Text } from 'react-native'
 import { useRouter } from 'expo-router'
 
-import Scale from '../../common/scale/Scale'
-
 import styles from './welcome.style'
 // import { COLORS, icons, SIZES } from '../../../constants'
 
@@ -18,8 +16,6 @@ function Welcome({ time }) {
         <Text style={styles.userName}>{`${time === 'night' ? '' : 'Hello '}${user}`}</Text>
         <Text style={styles.welcomeMessage}>{`How ${time === 'night' ? 'was' : 'is'} your mood today?`}</Text>
       </View>
-
-      <Scale />
 
     </View>
   )

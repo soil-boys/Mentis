@@ -13,8 +13,11 @@ import { View, Text, Pressable } from "react-native";
 function TabLayout() {
 
     const [greeting, setGreeting] = useState(getGreeting(moment().format('HH')))
+    const [date, setDate] = useState(moment())
     useEffect(() => {
-        setGreeting(getGreeting(moment().format('HH')))
+        setInterval(() => {
+            setGreeting(getGreeting(moment().format('HH')))
+        })
     }, [])
 
     return (
