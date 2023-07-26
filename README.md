@@ -16,6 +16,6 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 - [X] Set different responses for 'Sad' and 'Bad'
 - [X] Add working header greeting
 - [X] Add Minimal Navbar
-- [] Add Date display on right of header
+- [X] Add Date display on right of header
 
     ( (X) = Done, (O) = In progress, (-) = Halted )

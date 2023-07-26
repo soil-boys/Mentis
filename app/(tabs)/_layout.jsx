@@ -1,14 +1,14 @@
 import moment from "moment";
 import { Tabs } from "expo-router";
 import TabBarIcon from "../../components/common/tab bar icon/TabBarIcon";
-
 import getGreeting from "../../utils/getGreeting";
+import { Date } from "../../components";
 
 import { COLORS, icons, FONT, SIZES} from "../../constants";
 import { useEffect, useState } from "react";
 
 import styles from "../../components/common/tab bar icon/tabbaricon.style";
-import { Pressable } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
 function TabLayout() {
 
@@ -23,16 +23,9 @@ function TabLayout() {
                 tabBarActiveTintColor: COLORS.lightWhite,
                 tabBarInactiveTintColor: COLORS.primary,
                 tabBarActiveBackgroundColor: COLORS.tertiary,
-                tabBarInactiveBackgroundColor: COLORS.lightWhite,
+                tabBarInactiveBackgroundColor: COLORS.gray4,
                 tabBarLabelStyle: { fontFamily: FONT.medium },
-                // tabBarShowLabel: false,
                 tabBarItemStyle: styles.navBtn,
-                // tabBarButton: () => (
-                    //     <Pressable
-                    //         style={styles.navBtn}
-                    //         android_ripple={{ color: COLORS.secondary, radius: .5 }}
-                    //     />
-                    // ),
                 tabBarHideOnKeyboard: true,
             }}
         >
@@ -44,6 +37,9 @@ function TabLayout() {
                     headerTitleStyle: { fontFamily: FONT.medium, color: COLORS.secondary },
                     headerBackVisible: false,
                     headerTitle: `Good ${greeting}`,
+                    headerRight: () => <Date />,
+                    // headerBackground: () => <View style={{ flex: 1, backgroundColor: COLORS.gray4 }} />,
+                    // headerTransparent: true,
                     title: 'Home'
                 }}
             />

@@ -22,7 +22,6 @@ function Home() {
             <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false} overScrollMode="never">
                 <View style={{ flex: 1, padding: SIZES.medium }}>
                     <Welcome time={greeting} />
-
                     <Overview />
                 </View>
             </ScrollView>

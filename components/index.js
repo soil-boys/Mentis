@@ -1,4 +1,5 @@
 import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
+import Date from "./common/header/Date";
 
 // navbar
 // import Nav from "./nav (legacy)/Nav";
@@ -13,6 +14,7 @@ import Overview from "./home/overview/Overview";
 
 export {
   ScreenHeaderBtn,
+  Date,
   Welcome,
   Overview,
   // Nav
