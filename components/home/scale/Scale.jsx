@@ -1,13 +1,25 @@
+import { useEffect, useState } from 'react'
 import { View, Text, Pressable, Image } from 'react-native'
 import Slider from '@react-native-community/slider'
 import { LinearGradient } from 'expo-linear-gradient'
 
 import styles from './scale.style'
 import { COLORS, SIZES, icons, images } from '../../../constants'
-import { useState } from 'react'
+
+import { getData, storeData } from '../../../functions/Storage'
+import moment from 'moment'
 
 function Scale() {
 
+    useEffect( () => {
+        const getMoodData = async () => {
+            let _ = await getData(moment().format('DDMMYYYY'))
+            setValue((_ && _ !== {}) ? _.value : 3)
+            setSubmitted((_ && _ !== {}) ? true : false)
+        }
+        getMoodData()
+    }, [])
+    
     const [value, setValue] = useState(3)
     const [degree, setDegree] = useState(Math.round(value))
     const [submitted, setSubmitted] = useState(false)
@@ -47,6 +59,12 @@ function Scale() {
                     onPress={() => {
                         setSubmitted(true)
                         setDegree(Math.round(value))
+                        storeData({
+                            key: moment().format('DDMMYYYY'),
+                            value: value,
+                            degree: Math.round(value),
+                            timestamp: new Date()
+                        })
                     }}
                 >
                     <Text style={styles.scaleBtnText}>{submitted ? 'Submitted' : 'Submit'}</Text>

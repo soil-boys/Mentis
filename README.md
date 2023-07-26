@@ -5,6 +5,7 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 ### 🚀 Goals
 
 - [X] UI/UX
+- [O] Add storing data capacity
 - [O] AI Implementation to predict mood analytics based on statistical data
 
 
@@ -18,5 +19,7 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 - [X] Add Minimal Navbar
 - [X] Add Date display on right of header
 - [X] Add Analytics page
+- [X] Create functions for storing, getting and editing data
+- [O] Implement functions for storing, getting and editing data
 
     ( (X) = Done, (O) = In progress, (-) = Halted )
