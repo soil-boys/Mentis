@@ -11,7 +11,7 @@ import moment from 'moment'
 
 function Scale() {
 
-    useEffect( () => {
+    useEffect(() => {
         const getMoodData = async () => {
             let _ = await getData(moment().format('DDMMYYYY'))
             setValue((_ && _ !== {}) ? _.value : 3)
@@ -19,7 +19,7 @@ function Scale() {
         }
         getMoodData()
     }, [])
-    
+
     const [value, setValue] = useState(3)
     const [degree, setDegree] = useState(Math.round(value))
     const [submitted, setSubmitted] = useState(false)
