@@ -24,7 +24,8 @@ function TabLayout() {
                 tabBarInactiveTintColor: COLORS.primary,
                 tabBarActiveBackgroundColor: COLORS.tertiary,
                 tabBarInactiveBackgroundColor: COLORS.lightWhite,
-                tabBarShowLabel: false,
+                tabBarLabelStyle: { fontFamily: FONT.medium },
+                // tabBarShowLabel: false,
                 tabBarItemStyle: styles.navBtn,
                 // tabBarButton: () => (
                     //     <Pressable
@@ -43,6 +44,7 @@ function TabLayout() {
                     headerTitleStyle: { fontFamily: FONT.medium, color: COLORS.secondary },
                     headerBackVisible: false,
                     headerTitle: `Good ${greeting}`,
+                    title: 'Home'
                 }}
             />
             <Tabs.Screen
@@ -53,6 +55,7 @@ function TabLayout() {
                     headerTitleStyle: { fontFamily: FONT.medium, color: COLORS.secondary },
                     headerBackVisible: false,
                     headerTitle: `Analytics`,
+                    title: 'Analytics'
                 }}
             />
         </Tabs>

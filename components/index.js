@@ -1,7 +1,7 @@
 import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
 
 // navbar
-import Nav from "./nav/Nav";
+// import Nav from "./nav (legacy)/Nav";
 
 // home screen
 import Welcome from "./home/welcome/Welcome";
@@ -15,7 +15,7 @@ export {
   ScreenHeaderBtn,
   Welcome,
   Overview,
-  Nav
+  // Nav
   // AIResponseCard,
   // UserResponseCard
 };
