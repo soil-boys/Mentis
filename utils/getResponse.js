@@ -10,6 +10,15 @@ const responses = {
         "We're here for you.",
         "Remember, this too shall pass.",
         "Sending you strength and love.",
+        "You are stronger than you realize.",
+        "Believe in your resilience.",
+        "Take small steps to recovery.",
+        "Lean on friends and family.",
+        "You've overcome challenges before.",
+        "The sun will shine again.",
+        "Your journey is worth it.",
+        "You're not defined by bad days.",
+        "There's growth in difficult times.",
     ],
     Sad: [
         "I'm here for you.",
@@ -22,6 +31,15 @@ const responses = {
         "Sending healing thoughts your way.",
         "Better days are ahead.",
         "You have a support system here.",
+        "Your emotions are valid.",
+        "Take time for self-care.",
+        "Talking helps in healing.",
+        "You're not alone in this battle.",
+        "Strength comes from vulnerability.",
+        "Each day is a step forward.",
+        "The world needs your light.",
+        "You're worthy of love and care.",
+        "Your feelings will guide you.",
     ],
     Okay: [
         "Hang in there.",
@@ -34,6 +52,15 @@ const responses = {
         "Stay positive and keep moving.",
         "This too shall pass.",
         "You're on the right track.",
+        "Celebrate your small victories.",
+        "Your journey matters.",
+        "You're making progress.",
+        "Every day is a fresh start.",
+        "You have the strength within.",
+        "Your resilience is admirable.",
+        "Perseverance leads to growth.",
+        "Your potential is limitless.",
+        "Embrace the process of change.",
     ],
     Good: [
         "Glad you're happy today.",
@@ -46,11 +73,21 @@ const responses = {
         "Enjoy every moment to the fullest.",
         "You're radiating positivity.",
         "Your happiness is contagious.",
-    ]
+        "Share your positive energy.",
+        "The world needs more smiles.",
+        "Kindness multiplies happiness.",
+        "You're a beacon of light.",
+        "Your positivity inspires others.",
+        "The world is better with you.",
+        "Spread joy wherever you go.",
+        "Your happiness is empowering.",
+        "Keep shining and uplifting others.",
+    ],
 };
 
+
 const getResponse = (mood) => {
-    const randomIndex = Math.floor(Math.random() * 10);
+    const randomIndex = Math.floor(Math.random() * 20);
     // console.log(mood)
     if (!mood || mood === '' || typeof mood !== 'string') return responses['Okay'][randomIndex]
     const moodResponses = responses[mood];
