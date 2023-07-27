@@ -11,8 +11,14 @@ import chevronRight from '../assets/icons/chevron-right.png'
 import videoOn from '../assets/icons/video-on.png'
 import videoOff from '../assets/icons/video-off.png'
 import cameraSwitch from '../assets/icons/camera-switch.png'
+import home from '../assets/icons/home.png'
+import analytics from '../assets/icons/analytics.png'
+import edit from '../assets/icons/pencil.png'
 
 export default {
+  home,
+  edit,
+  analytics,
   heart,
   menu,
   search,

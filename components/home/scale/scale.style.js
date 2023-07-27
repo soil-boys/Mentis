@@ -34,19 +34,34 @@ const styles = StyleSheet.create({
         color: COLORS.gray,
         fontFamily: FONT.bold,
     },
-    scaleBtn: (submitted = false) => ({
+    scaleBtn: {
         alignSelf: 'flex-end',
-        borderRadius: SIZES.small * 0.8,
+        borderRadius: SIZES.medium,
         padding: SIZES.xSmall * 0.85,
-        backgroundColor: submitted ? COLORS.primary : COLORS.tertiary,
+        backgroundColor: COLORS.tertiary,
         marginTop: SIZES.large,
         overflow: 'hidden'
-    }),
-    scaleBtnText: (submitted = false) => ({
+    },
+    scaleBtnText: {
         fontFamily: FONT.medium,
         fontSize: SIZES.large * 1.02,
-        color: submitted ? COLORS.quaternary : COLORS.lightWhite
-    })
+        color: COLORS.lightWhite
+    },
+    editBtn: {
+        alignSelf: 'flex-end',
+        borderRadius: SIZES.small,
+        padding: SIZES.xSmall * 0.85,
+        backgroundColor: COLORS.primary,
+        marginTop: SIZES.large,
+        overflow: 'hidden',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    editBtnImage: {
+        width: 25,
+        height: 25,
+        tintColor: COLORS.lightWhite
+    }
 })
 
 export default styles

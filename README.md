@@ -1,11 +1,13 @@
 # Mentis
-
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+Record and analyse your mood today!
 
 ### 🚀 Goals
 
-- [O] UI/UX
-- [] AI Implementation to predict mood analytics based on statistical data
+- [X] UI/UX
+- [X] Add storing data capacity
+- [X] AI Implementation to predict mood analytics based on statistical data
+- [X] Implement Analytics based on real data
+
 
 
 ## 📝 To Do
@@ -14,6 +16,17 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 - [X] Add Mood Scale
 - [X] Add Mood Overview
 - [X] Set different responses for 'Sad' and 'Bad'
-- [] Add Minimal Navbar
+- [X] Add working header greeting
+- [X] Add Minimal Navbar
+- [X] Add Date display on right of header
+- [X] Add Analytics page
+- [X] Create functions for storing, getting and editing data
+- [X] Implement functions for storing, getting and editing data
+- [X] Implement AI Model
+- [X] Create AI api at 'https://mentis-ai.netlify.app/.netlify/functions/api/ai/mood' (dont click)
+- [X] Text AI
+- [X] Work on daywise analytics
+- [X] Work on graphs
+- [] Improve app responsiveness
 
     ( (X) = Done, (O) = In progress, (-) = Halted )

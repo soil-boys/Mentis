@@ -7,9 +7,12 @@ const COLORS = {
   gray: "#83829A",
   gray2: "#C1C0C8",
   gray3: "#46484d",
+  gray4: "#cccccc28",
 
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
+  blue: "#4484B2",
+  red: '#de4040'
 };
 
 const FONT = {

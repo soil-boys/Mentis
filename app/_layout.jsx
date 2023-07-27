@@ -1,11 +1,19 @@
+import 'node-libs-react-native/globals'
+
 import { Stack } from "expo-router";
 import { useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
-SplashScreen.preventAutoHideAsync();
-
 console.reportErrorsAsExceptions = false;
+
+export {ErrorBoundary } from 'expo-router';
+  
+export const unstable_settings = {
+    initialRouteName: '(tabs)',
+};
+
+SplashScreen.preventAutoHideAsync();
 
 function Layout() {
 
@@ -21,7 +29,13 @@ function Layout() {
 
     if (!loadedFonts) return null;
 
-    return <Stack onLayout={onLayoutRootView} />
+    return (
+        <>
+            <Stack onLayout={onLayoutRootView}>
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
+            </Stack>
+        </>
+    )
 }
 
 export default Layout;
