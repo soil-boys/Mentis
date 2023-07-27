@@ -4,7 +4,7 @@ import getDegrees from "./getDegrees"
 const getMood = async () => {
 
     // temp
-    return 'Good'
+    // return 'Good'
 
     const degreeData = await getDegrees()
 

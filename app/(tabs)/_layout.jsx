@@ -4,13 +4,11 @@ import TabBarIcon from "../../components/common/tab bar icon/TabBarIcon";
 import getGreeting from "../../utils/getGreeting";
 import { DateDisplay } from "../../components";
 
-import { COLORS, icons, FONT, SIZES} from "../../constants";
+import { COLORS, icons, FONT } from "../../constants";
 import { useEffect, useState } from "react";
 
 import styles from "../../components/common/tab bar icon/tabbaricon.style";
 // import { View, Text, Pressable } from "react-native";
-
-console.log(new Date(3))
 
 function TabLayout() {
 

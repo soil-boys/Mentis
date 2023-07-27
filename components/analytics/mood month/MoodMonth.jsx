@@ -28,7 +28,7 @@ function MoodMonth() {
             setGraphData(generateData(graphDat))
         }
         getData()
-    })
+    }, [])
 
     const [daysHappy, setDaysHappy] = useState(0)
     const [daysSad, setDaysSad] = useState(0)
