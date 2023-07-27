@@ -30,6 +30,11 @@ const styles = StyleSheet.create({
         // paddingRight: SIZES.xSmall,
         // paddingLeft: SIZES.xSmall,
     },
+    errText: {
+        fontFamily: FONT.bold,
+        fontSize: SIZES.xLarge * 1.3,
+        color: COLORS.red,
+    }
 })
 
 export default styles

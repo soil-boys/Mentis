@@ -1,5 +1,5 @@
 import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
-import Date from "./common/header/Date";
+import DateDisplay from "./common/header/DateDisplay";
 
 // navbar
 // import Nav from "./nav (legacy)/Nav";
@@ -19,7 +19,7 @@ import MoodMonth from "./analytics/mood month/MoodMonth";
 
 export {
   ScreenHeaderBtn,
-  Date,
+  DateDisplay,
   Welcome,
   Overview,
   Scale,

@@ -5,7 +5,7 @@ import moment from "moment/moment";
 import styles from "./date.style";
 import { useEffect, useState } from "react";
 
-function Date() {
+function DateDisplay() {
 
     const [date, setDate] = useState(moment())
     // useEffect(() => {
@@ -21,4 +21,4 @@ function Date() {
     )
 }
 
-export default Date
+export default DateDisplay

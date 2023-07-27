@@ -29,6 +29,13 @@ const styles = StyleSheet.create({
         fontSize: SIZES.xLarge * 1.6,
         color: COLORS.primary,
     },
+    errText: {
+        flex: 1,
+        fontFamily: FONT.bold,
+        fontSize: SIZES.xLarge * 1.3,
+        color: COLORS.red,
+        // marginTop: '40%'
+    }
 })
 
 export default styles

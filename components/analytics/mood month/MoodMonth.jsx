@@ -4,26 +4,28 @@ import { View, Text } from "react-native";
 import AnalyticsCard from "../../common/cards/analytics card/AnalyticsCard";
 import Graph from "../../common/graph/Graph";
 
-import { analyzeData } from "../../../functions/Analytics"; 
+import { analyzeData, graphing } from "../../../functions/Analytics"; 
 
 import styles from "./moodmonth.style";
 
 
 function MoodMonth() {
 
-    const generateData = (number) => {
-        return Array(number).fill(0).map((_, index) => ({ date: new Date(index), value: Math.tan(index) }))
+    const generateData = (arr) => {
+        return arr.map((_, index) => ({ date: new Date(index), value: _ }))
     }
     
     useEffect(() => {
 
         const getData = async () => {
-            let happy = await analyzeData('Happy')
-            let sad = await analyzeData('Sad')
-            let okay = await analyzeData('Okay')
+            let happy = await analyzeData('Happy', 'month')
+            let sad = await analyzeData('Sad', 'month')
+            let okay = await analyzeData('Okay', 'month')
+            let graphDat = await graphing('month')
             setDaysHappy(happy)
             setDaysOkay(okay)
             setDaysSad(sad)
+            setGraphData(generateData(graphDat))
         }
         getData()
     })
@@ -31,6 +33,7 @@ function MoodMonth() {
     const [daysHappy, setDaysHappy] = useState(0)
     const [daysSad, setDaysSad] = useState(0)
     const [daysOkay, setDaysOkay] = useState(0)
+    const [graphData, setGraphData] = useState([])
 
     return(
 
@@ -63,10 +66,10 @@ function MoodMonth() {
                         ripple
                     />
                 </View>
-                <View style={{ flex: 1, flexDirection: 'row', height: 200 }}>
+                <View style={{ flex: 1, flexDirection: 'row', height: (!graphData || graphData?.length < 2) ? 80 : 200 }}>
                     <AnalyticsCard
                         label='graph'
-                        content={ <Graph data={generateData(9)} /> }
+                        content={ (!graphData || graphData?.length < 2) ? <Text style={styles.errText}>Not enough data</Text> : <Graph data={graphData} /> }
                         // flipped={true}
                         width={false}
                         flex={true}

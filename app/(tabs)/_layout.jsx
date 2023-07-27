@@ -2,18 +2,19 @@ import moment from "moment";
 import { Tabs } from "expo-router";
 import TabBarIcon from "../../components/common/tab bar icon/TabBarIcon";
 import getGreeting from "../../utils/getGreeting";
-import { Date } from "../../components";
+import { DateDisplay } from "../../components";
 
 import { COLORS, icons, FONT, SIZES} from "../../constants";
 import { useEffect, useState } from "react";
 
 import styles from "../../components/common/tab bar icon/tabbaricon.style";
-import { View, Text, Pressable } from "react-native";
+// import { View, Text, Pressable } from "react-native";
+
+console.log(new Date(3))
 
 function TabLayout() {
 
     const [greeting, setGreeting] = useState(getGreeting(moment().format('HH')))
-    const [date, setDate] = useState(moment())
     useEffect(() => {
         setInterval(() => {
             setGreeting(getGreeting(moment().format('HH')))
@@ -40,7 +41,7 @@ function TabLayout() {
                     headerTitleStyle: { fontFamily: FONT.medium, color: COLORS.secondary },
                     headerBackVisible: false,
                     headerTitle: `Good ${greeting}`,
-                    headerRight: () => <Date />,
+                    headerRight: () => <DateDisplay />,
                     // headerBackground: () => <View style={{ flex: 1, backgroundColor: COLORS.gray4 }} />,
                     // headerTransparent: true,
                     title: 'Home'

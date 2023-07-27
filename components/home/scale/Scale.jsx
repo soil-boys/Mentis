@@ -1,3 +1,4 @@
+import moment from 'moment'
 import { useEffect, useState } from 'react'
 import { View, Text, Pressable, Image } from 'react-native'
 import Slider from '@react-native-community/slider'
@@ -7,7 +8,6 @@ import styles from './scale.style'
 import { COLORS, SIZES, icons, images } from '../../../constants'
 
 import { getData, storeData } from '../../../functions/Storage'
-import moment from 'moment'
 
 function Scale() {
 
@@ -64,7 +64,7 @@ function Scale() {
                             key: moment().format('DDMMYYYY'),
                             value: value,
                             degree: Math.round(value),
-                            timestamp: new Date()
+                            timestamp: moment()
                         })
                     }}
                 >

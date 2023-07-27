@@ -1,35 +1,39 @@
+import { Suspense } from "react";
+
 import { View, Text } from "react-native";
 
 import AnalyticsCard from "../../common/cards/analytics card/AnalyticsCard";
 import Graph from "../../common/graph/Graph";
 
-import { analyzeData } from "../../../functions/Analytics";
+import { analyzeData, graphing } from "../../../functions/Analytics";
 
 import styles from "./moodweek.style";
 import { useEffect, useState } from "react";
 
 function MoodWeek({ mood }) {
 
-    const generateData = (number) => {
-        return Array(number).fill(0).map((_, index) => ({ date: new Date(index), value: Math.sin(index) }))
+    const generateData = (arr) => {
+        return arr.map((_, index) => ({ date: new Date(index), value: _ }))
     }
 
     useEffect(() => {
-
         const getData = async () => {
             let happy = await analyzeData('Happy')
             let sad = await analyzeData('Sad')
             let okay = await analyzeData('Okay')
+            let graphDat = await graphing()
             setDaysHappy(happy)
             setDaysOkay(okay)
             setDaysSad(sad)
+            setGraphData(generateData(graphDat))
         }
         getData()
-    })
+    }, [])
 
     const [daysHappy, setDaysHappy] = useState(0)
     const [daysSad, setDaysSad] = useState(0)
     const [daysOkay, setDaysOkay] = useState(0)
+    const [graphData, setGraphData] = useState([])
 
     return(
 
@@ -45,7 +49,8 @@ function MoodWeek({ mood }) {
                     />
                     <AnalyticsCard
                         label='graph'
-                        content={ <Graph data={generateData(9)} /> }
+                        // content={ <Graph data={graphData} /> }
+                        content={ (!graphData || graphData?.length < 2) ? <Text style={styles.errText}>Not enough data</Text> : <Graph data={graphData} /> }
                         flipped={true}
                         flex={true}
                     />

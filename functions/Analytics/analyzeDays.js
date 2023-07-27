@@ -1,6 +1,6 @@
 import getDegrees from "../../utils/getDegrees"
 
-const analyzeData = async (mood) => {
+const analyzeData = async (mood, timePeriod = 'week') => {
 
     const referrer = {
         Happy: [4, 5],
@@ -8,7 +8,7 @@ const analyzeData = async (mood) => {
         Sad: [1, 2]
     }
 
-    const degreeData = await getDegrees()
+    const degreeData = await getDegrees(timePeriod)
 
     if (!degreeData || !degreeData?.length || degreeData?.length === 0) return 0
 

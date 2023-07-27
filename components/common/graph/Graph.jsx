@@ -1,3 +1,4 @@
+import moment from "moment";
 import { View, Text } from "react-native";
 import { LineGraph } from "react-native-graph";
 import { COLORS } from "../../../constants";
@@ -20,6 +21,12 @@ function Graph({ data }) {
                 enableIndicator={true}
                 SelectionDot={SelectionDot}
                 gradientFillColors={[ COLORS.primary, COLORS.gray2 ]}
+                // range={{
+                //     y: {
+                //         max: 200,
+                //         min: -200
+                //     }
+                // }}
             />
         </View>
     )
