@@ -1,6 +1,5 @@
 # Mentis
-
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+Record and analyse your mood today!
 
 ### 🚀 Goals
 
