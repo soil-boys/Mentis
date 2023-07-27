@@ -25,7 +25,7 @@ function MoodMonth() {
             setDaysHappy(happy)
             setDaysOkay(okay)
             setDaysSad(sad)
-            setGraphData(generateData(graphDat))
+            setGraphData(generateData([1,2,3,4,5,3,2,4,5,5,5,6,3,2,3,4,5,6,4,2,2]))
         }
         getData()
     }, [])
