@@ -7,19 +7,21 @@ import getFluctuations from '../../../utils/getFluctations'
 import styles from './overview.style'
 import { COLORS } from '../../../constants'
 
-function Overview() {
+function Overview({ mood }) {
 
     useEffect(() => {
-        const getFluctuationData = async () => {
+        const getData = async () => {
             let _ = await getFluctuations()
             setFluctuations(!_ ? 0 : _)
         }
-        getFluctuationData()
+        setResponse(getResponse(mood))
+        getData()
     }, [])
-
-    const mood = 'Okay'
+    
+    
     const [fluctuations, setFluctuations] = useState(0)
-
+    const [response, setResponse] = useState('')
+    
     return (
         <View style={{ flex: 1 }}>
         <View style={styles.container}>
@@ -27,7 +29,7 @@ function Overview() {
             <Pressable style={styles.boxContainer()} android_ripple={{ color: COLORS.secondary, radius: .1 }}>
                 <Text style={styles.text2}>Your overall mood was</Text>
                 <Text style={styles.boxText()}>{mood}</Text>
-                <Text style={styles.emoText}>{getResponse(mood)}</Text>
+                <Text style={styles.emoText}>{response}</Text>
                 {/* {mood === 'Sad' ? (
                     <Text style={styles.emoText}>Hope you're alright...</Text>
                 ) : mood === 'Bad' ? (

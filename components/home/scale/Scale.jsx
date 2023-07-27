@@ -14,8 +14,9 @@ function Scale() {
     useEffect(() => {
         const getMoodData = async () => {
             let _ = await getData(moment().format('DDMMYYYY'))
-            setValue((_ && _ !== {}) ? _.value : 3)
-            setSubmitted((_ && _ !== {}) ? true : false)
+            console.log()
+            setValue((_ && Object.keys(_)?.length === 3) ? _.value : 3)
+            setSubmitted((_ && Object.keys(_)?.length === 3) ? true : false)
         }
         getMoodData()
     }, [])

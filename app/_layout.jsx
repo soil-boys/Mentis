@@ -1,3 +1,5 @@
+import 'node-libs-react-native/globals'
+
 import { Stack } from "expo-router";
 import { useCallback } from "react";
 import { useFonts } from "expo-font";

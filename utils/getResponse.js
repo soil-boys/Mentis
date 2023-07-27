@@ -50,8 +50,10 @@ const responses = {
 };
 
 const getResponse = (mood) => {
+    const randomIndex = Math.floor(Math.random() * 10);
+    // console.log(mood)
+    if (!mood || mood === '' || typeof mood !== 'string') return responses['Okay'][randomIndex]
     const moodResponses = responses[mood];
-    const randomIndex = Math.floor(Math.random() * moodResponses.length);
     return moodResponses[randomIndex];
 };
 
