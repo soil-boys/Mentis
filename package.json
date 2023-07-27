@@ -22,7 +22,6 @@
     "expo-status-bar": "~1.6.0",
     "expo-updates": "~0.18.11",
     "moment": "^2.29.4",
-    "neuro.js": "^0.1.7",
     "node-libs-react-native": "^1.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

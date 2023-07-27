@@ -26,7 +26,7 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 - [X] Implement AI Model
 - [X] Create AI api at 'https://mentis-ai.netlify.app/.netlify/functions/api/ai/mood' (dont click)
 - [X] Text AI
-- [] Work on analytics
+- [X] Work on daywise analytics
 - [] Work on graphs
 - [] Improve app responsiveness
 

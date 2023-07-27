@@ -8,7 +8,6 @@ import { COLORS, FONT, icons, SIZES } from "../../constants";
 
 import getGreeting from '../../utils/getGreeting'
 import getMood from "../../utils/getMood";
-import { getData } from "../../functions/Storage";
 
 function Home() {
 
@@ -22,9 +21,6 @@ function Home() {
             setMood(_)
         }
         getData()
-        // setInterval(async () => {
-        //     await getData()
-        // }, 60000);
         setGreeting(getGreeting(moment().format('HH')))
     }, [])
 
