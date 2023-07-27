@@ -26,7 +26,7 @@ function Home() {
         //     await getData()
         // }, 60000);
         setGreeting(getGreeting(moment().format('HH')))
-    }, [moment().format('MM')])
+    }, [])
 
     return(
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>

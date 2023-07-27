@@ -5,8 +5,10 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 ### 🚀 Goals
 
 - [X] UI/UX
-- [O] Add storing data capacity
-- [O] AI Implementation to predict mood analytics based on statistical data
+- [X] Add storing data capacity
+- [X] AI Implementation to predict mood analytics based on statistical data
+- [X] Implement Analytics based on real data
+
 
 
 ## 📝 To Do
@@ -20,6 +22,12 @@ Use [`expo-router`](https://expo.github.io/router) to build native navigation us
 - [X] Add Date display on right of header
 - [X] Add Analytics page
 - [X] Create functions for storing, getting and editing data
-- [O] Implement functions for storing, getting and editing data
+- [X] Implement functions for storing, getting and editing data
+- [X] Implement AI Model
+- [X] Create AI api at 'https://mentis-ai.netlify.app/.netlify/functions/api/ai/mood' (dont click)
+- [X] Text AI
+- [] Work on analytics
+- [] Work on graphs
+- [] Improve app responsiveness
 
     ( (X) = Done, (O) = In progress, (-) = Halted )

@@ -9,7 +9,7 @@ const getMood = async () => {
 
     const options = {
         method: 'POST',
-        url: `http://192.168.111.72:3000/ai/mood`,
+        url: 'https://mentis-ai.netlify.app/.netlify/functions/api/ai/mood',
         headers: {
             'Content-Type': 'application/json'
         },
