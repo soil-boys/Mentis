@@ -8,7 +8,7 @@ import styles from './overview.style'
 import { COLORS } from '../../../constants'
 
 function Overview({ mood }) {
-
+    
     useEffect(() => {
         const getData = async () => {
             let _ = await getFluctuations()

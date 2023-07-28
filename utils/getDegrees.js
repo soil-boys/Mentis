@@ -10,7 +10,7 @@ const getDegrees = async (timePeriod = 'week') => {
         if (timePeriod === 'month') {
             const degreeArray = Object.keys(moodData)
                                 .map(key => moodData[key])
-                                .filter(e => (moment(e.timestamp).date() > 0 && moment(e.timestamp).isoWeekday() <= moment(e.timestamp).daysInMonth()))
+                                .filter(e => moment().month() === moment(e.timestamp).month())
                                 .sort((a, b) => { a.timestamp < b.timestamp })
                                 .map(_ => _.degree)
             return degreeArray
@@ -18,7 +18,7 @@ const getDegrees = async (timePeriod = 'week') => {
         
         const degreeArray = Object.keys(moodData)
                                 .map(key => moodData[key])
-                                .filter(e => (moment(e.timestamp).isoWeekday() > 0 && moment(e.timestamp).isoWeekday() <= 7))
+                                .filter(e => moment().isoWeek() === moment(e.timestamp).isoWeek())
                                 .sort((a, b) => { a.timestamp < b.timestamp })
                                 .map(_ => _.degree)
         return degreeArray

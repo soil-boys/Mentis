@@ -6,6 +6,7 @@ import { DateDisplay } from "../../components";
 
 import { COLORS, icons, FONT } from "../../constants";
 import { useEffect, useState } from "react";
+import { storeData } from "../../functions/Storage";
 
 import styles from "../../components/common/tab bar icon/tabbaricon.style";
 // import { View, Text, Pressable } from "react-native";
@@ -53,6 +54,7 @@ function TabLayout() {
                     headerTitleStyle: { fontFamily: FONT.medium, color: COLORS.secondary },
                     headerBackVisible: false,
                     headerTitle: `Analytics`,
+                    headerRight: () => <DateDisplay />,
                     title: 'Analytics'
                 }}
             />
