@@ -1,5 +1,12 @@
 # Mentis
-Record and analyse your mood today!
+---
+<div align="center">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Risuleia/Mentis">
+    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Risuleia/Mentis">
+    <img alt="GitHub" src="https://img.shields.io/github/license/Risuleia/Mentis">
+</div>
+
+> ### Record and analyse your mood today!
 
 ### 🚀 Goals
 
@@ -23,11 +30,11 @@ Record and analyse your mood today!
 - [X] Create functions for storing, getting and editing data
 - [X] Implement functions for storing, getting and editing data
 - [X] Implement AI Model
-- [X] Create AI api at 'https://mentis-ai.netlify.app/.netlify/functions/api/ai/mood' (dont click)
+- [X] Create AI api at [mood-api](https://mentis-ai.netlify.app/.netlify/functions/api/ai/mood) _(dont click, it'll send additional requests... we're already severely limited in requests)_
 - [X] Text AI
-- [X] Work on daywise analytics
+- [X] Work on day-wise analytics
 - [X] Work on graphs
-- [O] Fix bugs
-- [] Improve app responsiveness
+- [ ] Fix bugs
+- [-] Improve app responsiveness
 
     ( (X) = Done, (O) = In progress, (-) = Halted )
