@@ -1,6 +1,6 @@
 # Mentis
 ---
-<div style="text-align: center; display: flex; justify-content: center; gap: .6rem">
+<div align="center">
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Risuleia/Mentis">
     <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Risuleia/Mentis">
     <img alt="GitHub" src="https://img.shields.io/github/license/Risuleia/Mentis">
