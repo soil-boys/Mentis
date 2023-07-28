@@ -8,13 +8,29 @@ import styles from './scale.style'
 import { COLORS, SIZES, icons, images } from '../../../constants'
 
 import { getData, storeData } from '../../../functions/Storage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 function Scale() {
 
     useEffect(() => {
+        
         const getMoodData = async () => {
+            // storeData('27072023', 3.2, 3, moment().subtract(1, 'day'))
+            // storeData('26072023', 4.7, 5, moment().subtract(2, 'day'))  
+            // storeData('25072023', 2.3, 2, moment().subtract(3, 'day'))
+            // storeData('24072023', 1.2, 1, moment().subtract(4, 'day'))
+            // storeData('23072023', 3, 3, moment().subtract(5, 'day'))  
+            // storeData('22072023', 4.2, 4, moment().subtract(6, 'day'))
+            // storeData('21072023', 1.6, 2, moment().subtract(7, 'day'))
+            // storeData('20072023', 1.9, 2, moment().subtract(8, 'day'))  
+            // storeData('19072023', 2.1, 2, moment().subtract(9, 'day'))
+            // storeData('18072023', 2.5789, 3, moment().subtract(10, 'day'))
+            // storeData('17072023', 4.4, 5, moment().subtract(11, 'day'))  
+            // storeData('15072023', 5, 5, moment().subtract(13, 'day'))
+            // storeData('14072023', 3, 3, moment().subtract(14, 'day'))
+            // storeData('1372023', 3.1, 3, moment().subtract(15, 'day'))  
+            // storeData('10072023', 2.6, 3, moment().subtract(18, 'day'))
             let _ = await getData(moment().format('DDMMYYYY'))
-            console.log()
             setValue((_ && Object.keys(_)?.length === 3) ? _.value : 3)
             setSubmitted((_ && Object.keys(_)?.length === 3) ? true : false)
         }
@@ -60,12 +76,7 @@ function Scale() {
                     onPress={() => {
                         setSubmitted(true)
                         setDegree(Math.round(value))
-                        storeData({
-                            key: moment().format('DDMMYYYY'),
-                            value: value,
-                            degree: Math.round(value),
-                            timestamp: moment()
-                        })
+                        storeData(moment().format('DDMMYYYY'), value, Math.round(value), moment())
                     }}
                 >
                     <Text style={styles.scaleBtnText}>{submitted ? 'Submitted' : 'Submit'}</Text>

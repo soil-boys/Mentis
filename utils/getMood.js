@@ -7,7 +7,6 @@ const getMood = async () => {
     // return 'Good'
 
     const degreeData = await getDegrees()
-
     if (!degreeData || !degreeData?.length || degreeData?.length === 0) return 'Okay'
 
     const options = {

@@ -1,14 +1,14 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-const storeData = async (obj) => {
-    if (typeof obj !== 'object') throw Error
-    if (!obj) throw Error
+const storeData = async (key, value, degree, timestamp) => {
+
+    if (!key || !degree || !value || !timestamp) throw Error
 
     const newObj = {}
-    newObj[obj.key] = {
-        degree: obj.degree,
-        value: obj.value,
-        timestamp: obj.timestamp
+    newObj[key] = {
+        degree: degree,
+        value: value,
+        timestamp: timestamp
     }
 
     try {
@@ -16,17 +16,18 @@ const storeData = async (obj) => {
         const moodData = await AsyncStorage.getItem('mood_data')
         if (!moodData) await AsyncStorage.setItem('mood_data', JSON.stringify(newObj))
 
+
         let _ = JSON.parse(moodData)
-        _[obj.key] = {
-            degree: obj.degree,
-            value: obj.value,
-            timestamp: obj.timestamp
+        _[key] = {
+            degree: degree,
+            value: value,
+            timestamp: timestamp
         }
 
-        await AsyncStorage.setItem('mood_data', JSON.stringify(newObj))
+        AsyncStorage.setItem('mood_data', JSON.stringify(_)).then(() => console.log("successful")).catch(e => console.error(e))
 
     } catch (err) {
-        console.log(err)
+        console.error(err)
         throw err
     }
 

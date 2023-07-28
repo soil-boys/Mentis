@@ -49,7 +49,6 @@ function MoodWeek({ mood }) {
                     />
                     <AnalyticsCard
                         label='graph'
-                        // content={ <Graph data={graphData} /> }
                         content={ (!graphData || graphData?.length < 2) ? <Text style={styles.errText}>Not enough data</Text> : <Graph data={graphData} /> }
                         flipped={true}
                         flex={true}

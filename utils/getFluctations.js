@@ -1,20 +1,22 @@
 import { getData } from "../functions/Storage";
+import getDegrees from "./getDegrees";
 
 const getFluctuations = async () => {
 
     let fluctuations = 0
-    const moodData = await getData()
+    const degreeData = await getDegrees()
+    // const moodData = await getData()
 
-    if (!moodData || Object.keys(moodData)?.length < 1) return fluctuations
-    if (Object.keys(moodData).length === 1) return fluctuations
+    if (!degreeData || degreeData?.length < 2) return fluctuations
+    // if (Object.keys(moodData).length === 1) return fluctuations
 
-    const arr = Object.keys(moodData).map(key => moodData[key]).sort((a, b) => a.timestamp < b.timestamp)
+    // const arr = Object.keys(moodData).map(key => moodData[key]).sort((a, b) => a.timestamp < b.timestamp)
 
-    for (let i = 1; i < arr.length; i++) {
-        if (Math.abs(arr[i].degree - arr[i - 1].degree) >= 3) fluctuations += 1
-        else return
+    for (let i = 1; i < degreeData.length; i++) {
+        if (Math.abs(degreeData[i] - degreeData[i - 1]) >= 3) fluctuations += 1
+        else fluctuations += 0
     }
-
+    // console.log(fluctuations)
     return fluctuations
 
 }

@@ -27,6 +27,7 @@ Record and analyse your mood today!
 - [X] Text AI
 - [X] Work on daywise analytics
 - [X] Work on graphs
+- [O] Fix bugs
 - [] Improve app responsiveness
 
     ( (X) = Done, (O) = In progress, (-) = Halted )
