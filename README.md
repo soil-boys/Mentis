@@ -34,6 +34,7 @@
 - [X] Text AI
 - [X] Work on day-wise analytics
 - [X] Work on graphs
+- [] Change AI api host to improve speed. New api at [mentis-ai](https://mentis-ai.onrender.com/ai/mood)
 - [ ] Fix bugs
 - [-] Improve app responsiveness
 

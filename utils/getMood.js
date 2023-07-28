@@ -11,7 +11,7 @@ const getMood = async () => {
 
     const options = {
         method: 'POST',
-        url: 'https://mentis-ai.netlify.app/.netlify/functions/api/ai/mood',
+        url: 'https://mentis-ai.onrender.com/ai/mood',
         headers: {
             'Content-Type': 'application/json'
         },
