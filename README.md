@@ -32,9 +32,9 @@
 - [X] Implement AI Model
 - [X] Create AI api at [mood-api](https://mentis-ai.netlify.app/.netlify/functions/api/ai/mood) _(dont click, it'll send additional requests... we're already severely limited in requests)_
 - [X] Text AI
-- [X] Work on daywise analytics
+- [X] Work on day-wise analytics
 - [X] Work on graphs
-- [O] Fix bugs
-- [] Improve app responsiveness
+- [ ] Fix bugs
+- [-] Improve app responsiveness
 
     ( (X) = Done, (O) = In progress, (-) = Halted )
