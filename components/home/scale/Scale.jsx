@@ -10,7 +10,7 @@ import { COLORS, SIZES, icons, images } from '../../../constants'
 import { getData, storeData } from '../../../functions/Storage'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-function Scale() {
+function Scale({ refetch }) {
 
     useEffect(() => {
         
@@ -70,29 +70,30 @@ function Scale() {
                 </View>
 
                 {!submitted ? (
-                <Pressable
-                    style={styles.scaleBtn}
-                    android_ripple={{ color: COLORS.white, radius: 5 }}
-                    onPress={() => {
-                        setSubmitted(true)
-                        setDegree(Math.round(value))
-                        storeData(moment().format('DDMMYYYY'), value, Math.round(value), moment())
-                    }}
-                >
-                    <Text style={styles.scaleBtnText}>{submitted ? 'Submitted' : 'Submit'}</Text>
-                </Pressable>
+                    <Pressable
+                        style={styles.scaleBtn}
+                        android_ripple={{ color: COLORS.white, radius: 5 }}
+                        onPress={() => {
+                            setSubmitted(true)
+                            setDegree(Math.round(value))
+                            storeData(moment().format('DDMMYYYY'), value, Math.round(value), moment())
+                            refetch()
+                        }}
+                    >
+                        <Text style={styles.scaleBtnText}>{submitted ? 'Submitted' : 'Submit'}</Text>
+                    </Pressable>
                 ) : (
                     <Pressable
                     style={styles.editBtn}
                     android_ripple={{ color: COLORS.white, radius: 5 }}
                     onPress={() => setSubmitted(false)}
-                >
-                    <Image
-                        style={styles.editBtnImage}
-                        source={icons.edit}
-                        resizeMode='contain'
-                    />
-                </Pressable>
+                    >
+                        <Image
+                            style={styles.editBtnImage}
+                            source={icons.edit}
+                            resizeMode='contain'
+                        />
+                    </Pressable>
                 )}
             </View>
         </View>

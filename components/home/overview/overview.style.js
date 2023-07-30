@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: flipped ? 'flex-start' : 'flex-end',
         alignSelf: flipped ? 'flex-start' : 'flex-end',
+        textAlign: flipped ? 'left' : 'right'
     }),
     boxText: (flipped = false) => ({
         fontFamily: FONT.bold,
@@ -37,12 +38,13 @@ const styles = StyleSheet.create({
         paddingRight: flipped ? 0 : SIZES.xSmall / 2,
         paddingLeft: flipped ? SIZES.xSmall / 2 : 0,
     }),
-    emoText: {
+    emoText: (flipped = false) => ({
         marginTop: SIZES.xSmall * -.3,
         fontFamily: FONT.regular,
         fontSize: SIZES.medium,
-        color: COLORS.gray
-    }
+        color: COLORS.gray,
+        textAlign: flipped ? 'left' : 'right'
+    })
 })
 
 export default styles
