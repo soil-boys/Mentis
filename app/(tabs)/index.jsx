@@ -1,36 +1,41 @@
-import moment from "moment";
-import { useEffect, useState } from "react";
-import { View, ScrollView, SafeAreaView } from "react-native";
-import { useRouter } from "expo-router";
+import { useCallback, useEffect, useState } from "react";
+import { View, ScrollView, SafeAreaView, RefreshControl } from "react-native";
 
 import { Welcome, Overview, Scale } from "../../components";
-import { COLORS, FONT, icons, SIZES } from "../../constants";
-
-import getGreeting from '../../utils/getGreeting'
-import getMood from "../../utils/getMood";
+import { COLORS, SIZES } from "../../constants";
+import useData from "../../hooks/useData";
+import useGreeting from "../../hooks/useGreeting";
 
 function Home() {
 
-    const [greeting, setGreeting] = useState(getGreeting(moment().format('HH')))
-    const [mood, setMood] = useState('Okay')
-    const router = useRouter()
-    
-    useEffect(() => {
-        const getData = async () => {
-            let _ = await getMood()
-            setMood(_)
-        }
-        getData()
-        setGreeting(getGreeting(moment().format('HH')))
+    const { mood, loadingMood, fluctuations, loadingFluctuations, refetch } = useData()
+    const greeting = useGreeting()
+
+    const [refreshing, setRefreshing] = useState(false)
+
+    const onRefresh = useCallback(() => {
+        setRefreshing(true)
+        refetch()
+        setRefreshing(false)
     }, [])
 
     return(
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
-            <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false} overScrollMode="never">
+            <ScrollView
+                style={{ flex: 1 }}
+                showsVerticalScrollIndicator={false}
+                overScrollMode="never"
+                refreshControl={ <RefreshControl refreshing={refreshing} onRefresh={onRefresh} /> }
+            >
                 <View style={{ flex: 1, padding: SIZES.medium }}>
                     <Welcome time={greeting} />
-                    <Scale />
-                    <Overview mood={mood} />
+                    <Scale refetch={refetch} />
+                    <Overview
+                        mood={mood}
+                        loadingMood={loadingMood}
+                        fluctuations={fluctuations}
+                        loadingFluctuations={loadingFluctuations}
+                    />
                 </View>
             </ScrollView>
         </SafeAreaView>

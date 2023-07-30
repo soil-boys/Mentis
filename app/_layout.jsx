@@ -1,13 +1,13 @@
 import 'node-libs-react-native/globals'
 
 import { Stack } from "expo-router";
-import { useCallback } from "react";
-import { useFonts } from "expo-font";
+import { useCallback, useEffect, useState } from "react";
+import * as Font from 'expo-font'
 import * as SplashScreen from "expo-splash-screen";
 
 console.reportErrorsAsExceptions = false;
 
-export {ErrorBoundary } from 'expo-router';
+export { ErrorBoundary } from 'expo-router';
   
 export const unstable_settings = {
     initialRouteName: '(tabs)',
@@ -17,17 +17,31 @@ SplashScreen.preventAutoHideAsync();
 
 function Layout() {
 
-    const [loadedFonts] = useFonts({
-        DMBold: require('../assets/fonts/DMSans-Bold.ttf'),
-        DMMedium: require('../assets/fonts/DMSans-Medium.ttf'),
-        DMRegular: require('../assets/fonts/DMSans-Regular.ttf'),
-    })
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        async function load() {
+            try {
+                await Font.loadAsync({
+                    DMBold: require('../assets/fonts/DMSans-Bold.ttf'),
+                    DMMedium: require('../assets/fonts/DMSans-Medium.ttf'),
+                    DMRegular: require('../assets/fonts/DMSans-Regular.ttf'),
+                })
+            } catch (err) {
+                console.warn(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        load()
+    }, [])
 
     const onLayoutRootView = useCallback(async () => {
-        if (loadedFonts) await SplashScreen.hideAsync()
-    }, [loadedFonts])
+        if (!loading) await SplashScreen.hideAsync()
+    }, [loading])
 
-    if (!loadedFonts) return null;
+    if (loading) return null;
 
     return (
         <>

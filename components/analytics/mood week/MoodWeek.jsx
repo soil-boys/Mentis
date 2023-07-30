@@ -1,39 +1,16 @@
-import { Suspense } from "react";
-
-import { View, Text } from "react-native";
+import { View, Text, ActivityIndicator } from "react-native";
 
 import AnalyticsCard from "../../common/cards/analytics card/AnalyticsCard";
 import Graph from "../../common/graph/Graph";
 
-import { analyzeData, graphing } from "../../../functions/Analytics";
-
 import styles from "./moodweek.style";
-import { useEffect, useState } from "react";
+import { COLORS } from "../../../constants";
 
-function MoodWeek({ mood }) {
+function MoodWeek({ mood, loadingMood, analysis, loadingAnalysis, graph, loadingGraph  }) {
 
     const generateData = (arr) => {
         return arr.map((_, index) => ({ date: new Date(index), value: _ }))
     }
-
-    useEffect(() => {
-        const getData = async () => {
-            let happy = await analyzeData('Happy')
-            let sad = await analyzeData('Sad')
-            let okay = await analyzeData('Okay')
-            let graphDat = await graphing()
-            setDaysHappy(happy)
-            setDaysOkay(okay)
-            setDaysSad(sad)
-            setGraphData(generateData(graphDat))
-        }
-        getData()
-    }, [])
-
-    const [daysHappy, setDaysHappy] = useState(0)
-    const [daysSad, setDaysSad] = useState(0)
-    const [daysOkay, setDaysOkay] = useState(0)
-    const [graphData, setGraphData] = useState([])
 
     return(
 
@@ -43,13 +20,21 @@ function MoodWeek({ mood }) {
                 <View style={{ flex: 1 }}>
                     <AnalyticsCard
                         label='overall mood'
-                        content={ <Text style={styles.text2}>{mood}</Text> }
+                        content={loadingMood ? (
+                                <ActivityIndicator size="large" color={COLORS.primary} />
+                            ) : (
+                                <Text style={styles.text2}>{mood}</Text>
+                        )}
                         flipped={true}
                         ripple
                     />
                     <AnalyticsCard
                         label='graph'
-                        content={ (!graphData || graphData?.length < 2) ? <Text style={styles.errText}>Not enough data</Text> : <Graph data={graphData} /> }
+                        content={loadingGraph ? (
+                                <ActivityIndicator size="large" color={COLORS.primary} />
+                            ) : (
+                                (!graph || graph?.length < 2) ? <Text style={styles.errText}>Not enough data</Text> : <Graph data={generateData(graph)} />
+                        )}
                         flipped={true}
                         flex={true}
                     />
@@ -57,21 +42,33 @@ function MoodWeek({ mood }) {
                 <View style={styles.daysContainer}>
                     <AnalyticsCard
                         label='days happy'
-                        content={ <Text style={styles.text2}>{daysHappy}</Text> }
+                        content={loadingAnalysis ? (
+                                <ActivityIndicator size="large" color={COLORS.primary} />
+                            ) : (
+                                <Text style={styles.text2}>{analysis.Happy}</Text>
+                        )}
                         flipped={false}
                         flex={true}
                         ripple
                     />
                     <AnalyticsCard
                         label='days okay'
-                        content={ <Text style={styles.text2}>{daysOkay}</Text> }
+                        content={loadingAnalysis ? (
+                                <ActivityIndicator size="large" color={COLORS.primary} />
+                            ) : (
+                                <Text style={styles.text2}>{analysis.Okay}</Text>
+                        )}
                         flipped={false}
                         flex={true}
                         ripple
                     />
                     <AnalyticsCard
                         label='days sad'
-                        content={ <Text style={styles.text2}>{daysSad}</Text> }
+                        content={loadingAnalysis ? (
+                                <ActivityIndicator size="large" color={COLORS.primary} />
+                            ) : (
+                                <Text style={styles.text2}>{analysis.Sad}</Text>
+                        )}
                         flipped={false}
                         flex={false}
                         ripple
