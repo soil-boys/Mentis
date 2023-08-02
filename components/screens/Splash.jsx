@@ -1,14 +1,8 @@
 import { Video } from 'expo-av'
-import LottieView from 'lottie-react-native'
 import { SafeAreaView, useWindowDimensions } from 'react-native'
-import { Stack } from 'expo-router'
-// import { Dimensions } from 'react-native'
-// import { animations } from '../../constants'
-// import { sphash3, splash } from '../../constants/animations'
 
 function Splash({ animationVisible }) {
 
-    const { width, height } = useWindowDimensions()
 
     return (
         <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}>

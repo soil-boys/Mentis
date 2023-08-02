@@ -24,7 +24,7 @@ function Layout() {
     useEffect(() => {
         setTimeout(() => {
             setAnimationVisible(false)
-        }, 3000);
+        }, 4000);
     } , [])
 
     useEffect(() => {
