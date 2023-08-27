@@ -13,6 +13,24 @@
     "splash": {
       "image": "./assets/splash.png",
       "backgroundColor": "#B1C0E8"
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "a29396a9-864c-45f7-9815-43657407ac25"
+      }
+    },
+    "android": {
+      "package": "com.risuleia.Mentis"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/a29396a9-864c-45f7-9815-43657407ac25"
+    },
+    "ios": {}
   }
 }
