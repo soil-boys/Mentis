@@ -4,10 +4,15 @@
     "web": {
       "bundler": "metro"
     },
+    "icon": "./assets/icon.png",
     "name": "Mentis",
     "slug": "Mentis",
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#B1C0E8"
+    }
   }
 }
