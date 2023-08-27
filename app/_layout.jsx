@@ -4,6 +4,7 @@ import { Stack } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import * as Font from 'expo-font'
 import * as SplashScreen from "expo-splash-screen";
+// import Splash from '../components/screens/Splash';
 
 console.reportErrorsAsExceptions = false;
 
@@ -18,7 +19,8 @@ SplashScreen.preventAutoHideAsync();
 function Layout() {
 
     const [loading, setLoading] = useState(true)
-
+    // const [animationVisible, setAnimationVisible] = useState(true)
+    
     useEffect(() => {
         async function load() {
             try {
@@ -30,25 +32,30 @@ function Layout() {
             } catch (err) {
                 console.warn(err)
             } finally {
-                setLoading(false)
+                // setInterval(() => {
+                    setLoading(false)
+                // }, 4000);
             }
         }
 
         load()
+        // setInterval(() => setAnimationVisible(false, 4000))
     }, [])
 
     const onLayoutRootView = useCallback(async () => {
         if (!loading) await SplashScreen.hideAsync()
     }, [loading])
 
-    if (loading) return null;
+    if (loading) return null
 
     return (
-        <>
+        // loading ? (
+            
+        // ) : (
             <Stack onLayout={onLayoutRootView}>
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
             </Stack>
-        </>
+        // )
     )
 }
 

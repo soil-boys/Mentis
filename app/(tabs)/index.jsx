@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { View, ScrollView, SafeAreaView, RefreshControl } from "react-native";
+import { View, ScrollView, SafeAreaView, RefreshControl, Image } from "react-native";
 
 import { Welcome, Overview, Scale } from "../../components";
 import { COLORS, SIZES } from "../../constants";
@@ -20,6 +20,7 @@ function Home() {
     }, [])
 
     return(
+        <>
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
             <ScrollView
                 style={{ flex: 1 }}
@@ -39,6 +40,7 @@ function Home() {
                 </View>
             </ScrollView>
         </SafeAreaView>
+        </>
     )
 }
 
