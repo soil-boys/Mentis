@@ -23,13 +23,10 @@
       }
     },
     "android": {
-      "package": "com.risuleia.Mentis"
+      "package": "com.soilboys.Mentis"
     },
     "runtimeVersion": {
       "policy": "appVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/a29396a9-864c-45f7-9815-43657407ac25"
     },
     "ios": {}
   }
