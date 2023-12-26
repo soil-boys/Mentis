@@ -22,17 +22,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         height: 8,
-        borderRadius: SIZES.small,
+        borderRadius: SIZES.small
     },
     numberLine: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: SIZES.xSmall * .95,
+        marginTop: SIZES.xSmall * .95
     },
     numberLineText: {
         color: COLORS.gray,
-        fontFamily: FONT.bold,
+        fontFamily: FONT.bold
     },
     scaleBtn: {
         alignSelf: 'flex-end',

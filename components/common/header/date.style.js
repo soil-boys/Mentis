@@ -9,17 +9,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        marginRight: SIZES.large * 1.3
+        marginRight: SIZES.large * 1.3,
+        gap: 2
     },
     month: {
         fontSize: SIZES.xLarge * 0.9,
         fontFamily: FONT.bold,
-        color: COLORS.gray
+        color: COLORS.gray,
+        letterSpacing: 1
     },
     day: {
         fontSize: SIZES.xLarge * 0.9,
         fontFamily: FONT.bold,
-        color: COLORS.primary
+        color: COLORS.primary,
+        letterSpacing: 1
     },
     slash: {
         fontSize: SIZES.xLarge * 0.9,

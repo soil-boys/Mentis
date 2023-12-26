@@ -14,10 +14,12 @@ import cameraSwitch from '../assets/icons/camera-switch.png'
 import home from '../assets/icons/home.png'
 import analytics from '../assets/icons/analytics.png'
 import edit from '../assets/icons/pencil.png'
+import check from '../assets/icons/check2.png'
 
 export default {
   home,
   edit,
+  check,
   analytics,
   heart,
   menu,
