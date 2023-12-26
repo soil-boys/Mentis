@@ -6,10 +6,45 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  userName: {
+  userNameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     fontFamily: FONT.regular,
     fontSize: SIZES.large,
     color: COLORS.secondary,
+    gap: 5
+  },
+  userNameText: {
+    fontFamily: FONT.regular,
+    fontSize: SIZES.large,
+    color: COLORS.secondary,
+  },
+  userNameEditContainer: {
+    gap: 4,
+    flexDirection: 'row'
+  },
+  userName: (username = false, editing = false) => ({
+    fontFamily: FONT.regular,
+    fontSize: SIZES.large,
+    color: COLORS.secondary,
+    borderBottomWidth: (!username || !editing) ? 0 : 1,
+    borderStyle: 'dashed',
+    padding: 0
+  }),
+  editBtn: (editing = false) => ({
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 26,
+    aspectRatio: 1,
+    alignSelf: 'flex-end',
+    marginBottom: editing ? 0 : SIZES.xSmall * .2,
+    padding: SIZES.xLarge * .1
+  }),
+  editBtnImage: {
+    width: '100%',
+    height: '100%',
+    tintColor: COLORS.gray
   },
   welcomeMessage: {
     fontFamily: FONT.bold,
@@ -20,18 +55,7 @@ const styles = StyleSheet.create({
   tabsContainer: {
     width: "100%",
     marginTop: SIZES.medium,
-  },
-  tab: (activeJobType, item) => ({
-    paddingVertical: SIZES.small / 2,
-    paddingHorizontal: SIZES.small,
-    borderRadius: SIZES.medium,
-    borderWidth: 1,
-    borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
-  }),
-  tabText: (activeJobType, item) => ({
-    fontFamily: FONT.medium,
-    color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
-  }),
+  }
 });
 
 export default styles;

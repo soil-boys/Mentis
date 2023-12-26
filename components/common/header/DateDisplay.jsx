@@ -1,16 +1,16 @@
 import { View, Text } from "react-native";
+import { useEffect, useState } from "react";
 
 import moment from "moment/moment";
 
 import styles from "./date.style";
-import { useEffect, useState } from "react";
 
 function DateDisplay() {
 
     const [date, setDate] = useState(moment())
-    // useEffect(() => {
-    //     setInterval(() => setDate(moment()))
-    // }, [])
+    useEffect(() => {
+        setInterval(() => setDate(moment()), 1000)
+    }, [])
 
     return (
         <View style={styles.container}>

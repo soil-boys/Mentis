@@ -10,7 +10,8 @@ import { COLORS } from "../../../constants";
 function MoodMonth({ analysis, loadingAnalysis, graph, loadingGraph }) {
 
     const generateData = (arr) => {
-        return arr.map((_, index) => ({ date: new Date(index), value: _ }))
+        let data = arr.map((_, index) => ({ date: new Date(index), value: _ }))
+        return data
     }
     
     return(
