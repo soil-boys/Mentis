@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT.regular,
     fontSize: SIZES.large,
     color: COLORS.secondary,
-    borderBottomWidth: (!username || !editing) ? 1 : 0,
+    borderBottomWidth: (!username || !editing) ? 0 : 1,
     borderStyle: 'dashed',
     padding: 0
   }),
